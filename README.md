@@ -1,0 +1,1 @@
+Mini API desenvolvida utilizando Spring Boot.
