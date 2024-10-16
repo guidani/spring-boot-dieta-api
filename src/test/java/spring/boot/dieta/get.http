@@ -1,0 +1,39 @@
+
+GET http://localhost:8081/api/dietas/listar
+Accept: application/json
+
+###
+
+POST http://localhost:8081/api/dietas/adicionar HTTP/1.1
+Content-Type: application/json
+
+{
+  "dia": "2024-10-15",
+  "horario": "12:00:00",
+  "alimentos": [
+    {
+    "nome": "Arroz integral",
+    "quantidade": 4,
+    "unidadeMedida" : "UN",
+    "calorias": "250"
+    },
+    {
+    "nome": "Feijão",
+    "quantidade": 2,
+    "unidadeMedida" : "UN",
+    "calorias": "150"
+    },
+    {
+    "nome": "Alface",
+    "quantidade": 4,
+    "unidadeMedida" : "UN",
+    "calorias": "50"
+    },
+    {
+    "nome": "Frango assado",
+    "quantidade": 2,
+    "unidadeMedida" : "UN",
+    "calorias": "175"
+    }
+  ]
+}
