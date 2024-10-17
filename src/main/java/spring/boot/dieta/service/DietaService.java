@@ -2,6 +2,7 @@ package spring.boot.dieta.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,4 +28,9 @@ public class DietaService {
   public List<Dieta> listarDietasPorDia(LocalDate dia) {
     return repository.findByDia(dia);
   }
+
+  public Optional<Dieta> buscarDietaPorId(Long id) {
+    return repository.findById(id);
+  }
+  
 }
