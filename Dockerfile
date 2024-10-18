@@ -1,16 +1,8 @@
-FROM ubuntu:latest AS build
-
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
+FROM maven:3.8.5-openjdk-17 AS build
 COPY . .
-
-RUN apt-get install maven -y
-RUN mvn clean install
+RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
-
-EXPOSE 8081
-
 COPY --from=build /target/dieta-0.0.1-SNAPSHOT.jar app.jar
-
+EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "app.jar"]
